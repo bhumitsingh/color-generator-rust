@@ -1,0 +1,19 @@
+[package]
+name = "color-generator-rs"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+image = "0.25"          # Image loading/processing
+palette = "0.7"          # Color manipulation/extraction (includes k-means for dominant colors)
+clap = { version = "4.5", features = ["derive"] }  # CLI parsing
+serde = { version = "1.0", features = ["derive"] } # JSON serialization for schemes/cache
+serde_json = "1.0"
+handlebars = "6.0"       # Templating (Jinja-like alternative to pywal's Jinja2)
+walkdir = "2"            # For cache management
+anyhow = "1.0"           # Error handling
+thiserror = "1.0"        # Custom errors
+
+[[bin]]
+name = "wal"             # Main CLI binary
+path = "src/main.rs"
